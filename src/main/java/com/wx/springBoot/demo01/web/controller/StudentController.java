@@ -1,5 +1,7 @@
-package com.wx.springBoot.demo01.controller;
+package com.wx.springBoot.demo01.web.controller;
 
+import com.wx.springBoot.demo01.common.WrapMapper;
+import com.wx.springBoot.demo01.common.Wrapper;
 import com.wx.springBoot.demo01.model.pojo.Student;
 import com.wx.springBoot.demo01.service.IStudentService;
 import com.wx.springBoot.demo01.service.impl.StudentServiceImpl;
@@ -25,8 +27,14 @@ public class StudentController {
     private IStudentService studentService;
 
     @GetMapping("/selectall")
-    public List<Student> selectAll(){
+    public Wrapper<List<Student>> selectAll(){
         List<Student> students = studentService.studenetList();
-        return students;
+        Wrapper<List<Student>> wrapper = null;
+        if (null!=students){
+            wrapper = WrapMapper.wrap(200,"查询成功",students);
+        }else {
+            wrapper = WrapMapper.wrap(200,"查无数据");
+        }
+        return wrapper;
     }
 }

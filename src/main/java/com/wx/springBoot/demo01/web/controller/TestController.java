@@ -1,4 +1,4 @@
-package com.wx.springBoot.demo01.controller;
+package com.wx.springBoot.demo01.web.controller;
 
 import com.wx.springBoot.demo01.service.impl.StudentServiceImpl;
 import org.apache.log4j.LogManager;
