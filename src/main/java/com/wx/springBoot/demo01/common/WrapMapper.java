@@ -129,7 +129,8 @@ public class WrapMapper {
 	 *
 	 * @param <E> the type parameter
 	 * @param o   the o
-	 *
+	 *<E>为Element的首字母，一般表示集合中的元素。
+	 *<T>为Type的首字母，表示传输参数的类型。
 	 * @return the wrapper
 	 */
 	public static <E> Wrapper<E> ok(E o) {
