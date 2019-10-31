@@ -4,6 +4,7 @@ import com.wx.springBoot.demo01.model.pojo.Student;
 
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author wangxin
@@ -12,5 +13,7 @@ import java.util.List;
  * @date 2019-10-29 10:53
  */
 public interface IStudentService {
-    List<Student> studenetList();
+    //List<Student> studenetList();
+
+    Map<String,Object> selectTwoDataBase();
 }
